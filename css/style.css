@@ -1,0 +1,16 @@
+body { 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    margin: 2rem; 
+}
+
+button { 
+    padding: 1rem; 
+    font-size: 1.2rem; 
+    margin-top: 1rem; 
+}
+
+.progress { 
+    margin-top: 1rem; 
+    font-size: 1.1rem; 
+}
