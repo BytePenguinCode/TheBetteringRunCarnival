@@ -1,5 +1,5 @@
 // How many QR codes they need to scan to claim the prize
-const TOTAL_CODES = 4;
+const TOTAL_CODES = 5;
 
 // Function to get progress from localStorage
 function getScannedCodes() {
