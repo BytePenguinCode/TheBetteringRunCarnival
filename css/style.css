@@ -60,6 +60,10 @@ button {
     width: 150px;
 }
 
+.station .complete {
+    opacity: 20%;
+}
+
 .station div{
     display: flex;
     flex-direction: column;
