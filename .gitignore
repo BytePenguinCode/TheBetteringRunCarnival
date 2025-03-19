@@ -1,0 +1,48 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore environment variable files
+.env
+.env.test
+
+# Ignore build output
+dist/
+build/
+
+# Ignore coverage directory
+coverage/
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.qodo
+
+# Ignore npm package lock files
+package-lock.json
+yarn.lock
+
+# Ignore eslint cache
+.eslintcache
+
+# Ignore TypeScript build output
+*.tsbuildinfo
+
+# Ignore optional npm cache directory
+.npm/
