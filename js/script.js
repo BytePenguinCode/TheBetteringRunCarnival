@@ -1,5 +1,5 @@
 // How many QR codes they need to scan to claim the prize
-const TOTAL_CODES = 4;
+const TOTAL_CODES = 5;
 
 // Function to get progress from localStorage
 function getScannedCodes() {
@@ -26,6 +26,9 @@ function updateProgressDisplay(codes) {
         const p = document.createElement('p');
         p.textContent = `Scanned QR Code: ${code}`;
         codesListDiv.appendChild(p);
+        const image = document.getElementById(code);
+        console.log(image)
+        image.classList.add("complete")
     });
 
     // Show claim prize button if they scanned all codes
@@ -33,7 +36,11 @@ function updateProgressDisplay(codes) {
         prizeDiv.innerHTML = '';
         const claimButton = document.createElement('button');
         claimButton.textContent = 'Claim Your Prize 🎉';
-        claimButton.onclick = () => alert('Prize claimed! Show this screen to claim your prize.');
+        claimButton.onclick = () => {
+            alert('Prize claimed! Show this screen to claim your prize.');
+            localStorage.clear()
+            window.location.replace("index.html")
+        };
         prizeDiv.appendChild(claimButton);
     } else {
         prizeDiv.innerHTML = '<p>Keep scanning QR codes to unlock the prize!</p>';
