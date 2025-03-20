@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let stationName = document.querySelector(".stationName");
     stationName.textContent = `Station ${station}`;
 
+    document.title = `The Bettering Run Carnival | Station ${station}`;
+
     //TODO: Change Text Content of .stationDescription
 
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {

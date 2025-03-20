@@ -145,7 +145,7 @@ button:hover {
     position: relative;
 }
 
-.map img{
+.map img {
     width: 100%;
 }
 
@@ -162,7 +162,7 @@ button:hover {
     text-decoration: none;
 }
 
-.station *{
+.station * {
     font-size: 1em;
     margin: 10px;
     color: var(--black);
@@ -178,11 +178,13 @@ button:hover {
 .complete {
     background-color: #cccccc;
     color: #4e4e4e;
+    pointer-events: none;
 }
 
 .complete:hover {
     background-color: #cccccc;
     color: #4e4e4e;
     transform: scale(1);
-    box-shadow: 0 0 15px var(--darkest-green);
+    box-shadow: 0 0 5px var(--darkest-green);
+    pointer-events: none;
 }
