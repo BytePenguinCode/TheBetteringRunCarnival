@@ -46,3 +46,4 @@ yarn.lock
 
 # Ignore optional npm cache directory
 .npm/
+.qodo
