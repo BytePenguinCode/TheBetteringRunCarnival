@@ -26,9 +26,8 @@ function updateProgressDisplay(codes) {
         const p = document.createElement('p');
         p.textContent = `Scanned QR Code: ${code}`;
         codesListDiv.appendChild(p);
-        const image = document.getElementById(code);
-        console.log(image)
-        image.classList.add("complete")
+        const station = document.getElementById(code);
+        station.classList.add("complete")
     });
 
     // Show claim prize button if they scanned all codes
