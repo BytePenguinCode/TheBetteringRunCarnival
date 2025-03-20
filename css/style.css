@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 
 :root {
-    --darkest-green: #0C2B26;
+    --darkest-green: #0c2b26;
     --dark-green: #173732;
     --green: #245448;
-    --pastel-green: #8EB69B;
-    --light-green: #DAF1DF;
-    --white: #ffffff
+    --pastel-green: #8eb69b;
+    --light-green: #daf1df;
+    --white: #ffffff;
 }
 
-body { 
+body {
     font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -52,15 +52,25 @@ h1 {
     margin: 0;
 }
 
-.hamburger-button svg{
+#stampCard {
+    font-weight: 900;
+    font-size: x-large;
+    width: 100%;
+    max-width: 100%;
+    color: var(--dark-green);
+    margin: 10px;
+    margin-top: 24px;
+}
+
+.hamburger-button svg {
     transition: all 0.2s ease-in-out;
 }
 
-.hamburger-button.active svg{
+.hamburger-button.active svg {
     transform: rotate(180deg);
 }
 
-.hamburger{
+.hamburger {
     background-color: var(--darkest-green);
     color: var(--white);
     text-decoration: none;
@@ -80,7 +90,7 @@ h1 {
     margin: 0;
 }
 
-.hamburger ul{
+.hamburger ul {
     list-style-type: none;
     text-align: left;
     display: flex;
@@ -98,12 +108,12 @@ h1 {
 }
 
 .hamburger ul li ul {
-    padding: 30px 0 15px 40px;
+    padding: 30px 15px;
 }
 
-button { 
-    padding: 15px; 
-    font-size: 1.2rem; 
+button {
+    padding: 15px;
+    font-size: 1.2rem;
     font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -125,9 +135,9 @@ button:hover {
     box-shadow: 0 0 15px var(--darkest-green);
 }
 
-.progress { 
-    margin-top: 1rem; 
-    font-size: 1.1rem; 
+.progress {
+    margin-top: 24px;
+    font-size: 1.1rem;
 }
 
 .flags {

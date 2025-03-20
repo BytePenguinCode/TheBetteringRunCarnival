@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 
 :root {
-    --darkest-green: #0C2B26;
+    --darkest-green: #0c2b26;
     --dark-green: #173732;
     --green: #245448;
-    --pastel-green: #8EB69B;
-    --light-green: #DAF1DF;
-    --white: #ffffff
+    --pastel-green: #8eb69b;
+    --light-green: #daf1df;
+    --white: #ffffff;
 }
 
-body { 
+body {
     font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -22,6 +22,10 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--white);
+}
+
+body * {
+    max-width: 768px;
 }
 
 nav {
@@ -36,7 +40,6 @@ main {
     width: 100%;
     position: relative;
     z-index: 1;
-
 }
 
 h1 {
@@ -55,30 +58,24 @@ h1 {
 #disclaimer_p {
     font-size: 30px;
     margin: 0px 15px;
-
 }
-
 
 .section {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
-
 }
 
-
-
 #redeem {
-    position: relative;  /* Ensures child absolute elements position relative to this */
+    position: relative; /* Ensures child absolute elements position relative to this */
     height: 750px;
     width: 100%;
     overflow: visible; /* Prevents overflow issues */
     display: flex;
     justify-content: center;
-    background-color: #DAF1DF;
+    background-color: #daf1df;
     z-index: -2;
-
 }
 
 section .container {
@@ -112,12 +109,12 @@ section .container {
     align-items: center;
 }
 
-button { 
+button {
     position: relative;
     z-index: 10;
-    padding: 1rem; 
-    font-size: 50px; 
-    margin-top: 1rem; 
+    padding: 1rem;
+    font-size: 50px;
+    margin-top: 1rem;
     font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -133,7 +130,6 @@ button {
 
 button:hover {
     cursor: pointer;
-
     transform: scale(0.9);
     background-color: var(--darkest-green);
     color: var(--light-green);
@@ -150,7 +146,6 @@ button:hover {
     background-color: var(--light-green);
     color: var(--darkest-gre);
     box-shadow: 0 0 15px var(--light-green);
-
 }
 
 #confirm {
@@ -172,7 +167,7 @@ button:hover {
     backdrop-filter: blur(3px);
 }
 
-.popup-content{
+.popup-content {
     background-color: white;
     height: 450px;
     width: 600px;
@@ -215,7 +210,7 @@ button.disabled {
     color: white;
 }
 
-#goodybagimg {
+#goodiebagimg {
     width: 450px;
     height: 450px;
 }
@@ -223,7 +218,6 @@ button.disabled {
 #footer {
     display: flex;
     justify-content: center;
-
 }
 
 .bottomDisclaimer {
@@ -232,4 +226,5 @@ button.disabled {
     background-color: #ffbf2b;
     font-size: 30px;
     border-radius: 15px;
+    padding: 10px 20px;
 }
