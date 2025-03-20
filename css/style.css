@@ -140,27 +140,29 @@ button:hover {
     font-size: 1.1rem;
 }
 
-.flags {
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 30px;
+.map {
+    position: relative;
 }
 
-.flags > * {
-    padding: 15px;
+.map img{
+    width: 100%;
 }
 
 .station {
     display: block;
-    max-width: 350px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px var(--darkest-green);
+    box-sizing: border-box;
+    position: absolute;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 0 0 5px var(--darkest-green);
     background-color: var(--white);
     transition: all ease-in-out 0.2s;
+}
+
+.station *{
+    font-size: 1em;
+    margin: 10px;
 }
 
 .station:hover {
