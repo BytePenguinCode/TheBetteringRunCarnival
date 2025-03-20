@@ -30,11 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //TODO: Change Text Content of .stationDescription
 
-    // Request camera access first
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        console.error("getUserMedia is not supported in this browser.");
+        alert("Camera access is not supported on this device.");
+        return;
+    }
+
     navigator.mediaDevices
-        .getUserMedia({ video: true })
+        .getUserMedia({ video: { facingMode: "environment" } })
         .then((stream) => {
             console.log("Camera access granted.");
+
+            // Stop the stream immediately (forces re-prompt if denied before)
+            stream.getTracks().forEach((track) => track.stop());
 
             // Now initialize the QR scanner
             let html5QrCode = new Html5Qrcode("reader");
@@ -54,5 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch((error) => {
             console.error("Camera access denied:", error);
+            alert(
+                "Camera access was denied. Please allow it in your browser settings."
+            );
         });
 });
