@@ -9,6 +9,12 @@ function onScanSuccess(decodedText, decodedResult) {
             decodedText.length - 9,
             decodedText.length - 1
         );
+        alert(
+            `Valid QR Code Scanned for Station ${decodedText.substring(
+                decodedText.length - 2,
+                decodedText.length - 1
+            )} URLSearchParams(window.location.search).get("station")`
+        );
         if (
             queryParam == URLSearchParams(window.location.search).get("station")
         ) {
