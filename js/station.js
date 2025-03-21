@@ -9,15 +9,23 @@ function onScanSuccess(decodedText, decodedResult) {
             decodedText.length - 9,
             decodedText.length - 1
         );
-        alert(
-            `Valid QR Code Scanned for Station ${decodedText.substring(
-                decodedText.length - 2,
-                decodedText.length - 1
-            )}`
-        );
+        if (
+            queryParam == URLSearchParams(window.location.search).get("station")
+        ) {
+            alert(
+                `Valid QR Code Scanned for Station ${decodedText.substring(
+                    decodedText.length - 2,
+                    decodedText.length - 1
+                )}`
+            );
+        } else {
+            alert("Wrong  Station QR Code Scanned");
+        }
 
         // Redirect after alert is dismissed
         window.location.replace("stampcard.html?" + queryParam);
+    } else {
+        alert("Invalid QR Code Scanned");
     }
 }
 
