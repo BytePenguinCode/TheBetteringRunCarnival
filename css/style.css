@@ -198,6 +198,12 @@ button:hover {
     transition: all 0.3s ease;
 }
 
+.loading {
+    background-color: #f0f0f0;
+    border: 2px dashed #888;
+    color: #888;
+}
+
 .verified {
     background-color: #d4fcd2;
     border: 2px solid #2ecc71;
@@ -215,5 +221,6 @@ button:hover {
 .message {
     text-align: center;
     font-size: 1.25rem;
-    margin-top: 1rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
 }
