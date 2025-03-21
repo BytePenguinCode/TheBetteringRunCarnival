@@ -21,5 +21,5 @@ document.getElementById("yes-btn").addEventListener("click", () => {
 // Redirect to Progress Page on "No, Go Back"
 document.getElementById("no-btn").addEventListener("click", () => {
     console.log("No button clicked");
-    window.location.href = "index.html";
+    window.location.href = "stampcard.html";
 });

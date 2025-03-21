@@ -1,6 +1,4 @@
 function onScanSuccess(decodedText, decodedResult) {
-    alert("QR Code Scanned: " + decodedText);
-
     if (
         decodedText.includes(
             "thebetteringbranchandbytepenguinarethegoatsweareup"
@@ -11,9 +9,15 @@ function onScanSuccess(decodedText, decodedResult) {
             decodedText.length - 9,
             decodedText.length - 1
         );
+        alert(
+            `Valid QR Code Scanned for Station ${decodedText.substring(
+                decodedText.length - 2,
+                decodedText.length - 1
+            )}`
+        );
 
         // Redirect after alert is dismissed
-        window.location.replace("index.html?" + queryParam);
+        window.location.replace("stampcard.html?" + queryParam);
     }
 }
 
