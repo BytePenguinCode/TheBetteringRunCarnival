@@ -19,7 +19,7 @@ function onScanSuccess(decodedText, decodedResult) {
                 )}`
             );
         } else {
-            alert("Wrong  Station QR Code Scanned");
+            alert("Wrong Station QR Code Scanned");
         }
 
         // Redirect after alert is dismissed
