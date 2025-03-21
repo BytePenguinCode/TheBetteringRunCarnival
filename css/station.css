@@ -11,6 +11,16 @@ body {
     background-color: var(--white);
 }
 
+.back {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 15px;
+    width: 100%;
+    color: var(--black  );
+}
+
 #reader {
     width: 90vmin;
     height: 90vmin;
