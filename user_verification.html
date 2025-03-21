@@ -19,6 +19,7 @@
             align-items: center;
             height: 100vh;
             background-color: #F4F4F9;
+            position: relative;
         }
 
         /* Container */
@@ -72,9 +73,14 @@
             margin-bottom: 15px;
         }
 
+        /* Buttons */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
         button {
-            background-color: #1D4D2C;
-            color: white;
             padding: 12px;
             border: none;
             border-radius: 6px;
@@ -83,8 +89,54 @@
             transition: background 0.3s;
         }
 
-        button:hover {
+        .login-btn {
+            background-color: #1D4D2C;
+            color: white;
+        }
+
+        .login-btn:hover {
             background-color: #164026;
+        }
+
+        .guest-btn {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .guest-btn:hover {
+            background-color: #bbb;
+        }
+
+        /* Toast Notification */
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            padding: 10px;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            font-size: 16px;
+        }
+
+        .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeout {
+            from { opacity: 1; }
+            to { opacity: 0; }
         }
     </style>
 </head>
@@ -95,16 +147,32 @@
         </header>
         <div class="login-box">
             <h2>Volunteer Login</h2>
-            <form action="/login" method="post">
+            <form>
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
 
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
 
-                <button type="submit">Login</button>
+                <div class="button-container">
+                    <button type="button" class="login-btn" onclick="showToast()">Login</button>
+                    <button type="button" class="guest-btn" onclick="showToast()">Guest Login</button>
+                </div>
             </form>
         </div>
     </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Verification Done</div>
+
+    <script>
+        function showToast() {
+            var toast = document.getElementById("toast");
+            toast.classList.add("show");
+            setTimeout(function () {
+                toast.classList.remove("show");
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
