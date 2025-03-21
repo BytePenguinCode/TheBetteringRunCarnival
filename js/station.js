@@ -21,6 +21,11 @@ function onScanFailure(error) {
     console.warn("Scan error: ", error);
 }
 
+if (sessionStorage.getItem("pointsRedeemed") === "true") {
+    // Redirect to another page if redemption is already completed
+    window.location.href = "redeemed.html"; // Change to the appropriate page
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const station = params.get("station");

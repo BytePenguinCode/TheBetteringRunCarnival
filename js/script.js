@@ -1,3 +1,8 @@
+if (sessionStorage.getItem("pointsRedeemed") === "true") {
+    // Redirect to another page if redemption is already completed
+    window.location.href = "redeemed.html"; // Change to the appropriate page
+}
+
 // How many QR codes they need to scan to claim the prize
 const TOTAL_CODES = 5;
 
@@ -36,9 +41,7 @@ function updateProgressDisplay(codes) {
         const claimButton = document.createElement("button");
         claimButton.textContent = "Claim Your Prize 🎉";
         claimButton.onclick = () => {
-            alert("Prize claimed! Show this screen to claim your prize.");
-            localStorage.clear();
-            window.location.replace("index.html");
+            window.location.replace("point_redemption_confirmation.html");
         };
         prizeDiv.appendChild(claimButton);
     } else {
@@ -49,6 +52,8 @@ function updateProgressDisplay(codes) {
 
 // Main logic to check for query params and update progress
 function main() {
+    // Check if points have already been redeemed
+
     console.log("Hello");
     const scannedCodes = getScannedCodes();
 
@@ -75,5 +80,7 @@ function main() {
     updateProgressDisplay(scannedCodes);
 }
 
-// Run the main function when the page loads
-main();
+document.addEventListener("DOMContentLoaded", () => {
+    // Run the main function when the page loads
+    main();
+});
