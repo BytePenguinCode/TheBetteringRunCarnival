@@ -225,14 +225,13 @@ button.disabled {
 }
 
 .bottomDisclaimer {
+    position: absolute;
     height: auto;
-    width: 100%;
+    width: 100%-60px;
     background-color: #ff992b;
     font-size: 20px;
     border-radius: 10px;
-
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+    padding: 0 15px;
 }
 
 @media only screen and (min-width: 0em) {
@@ -265,8 +264,8 @@ button.disabled {
         height: 100px;
     }
     .bottomDisclaimer {
-        font-size: 30px;
-        padding: 0 10px; 
+        font-size: 25px;
+        padding: 0 15px; 
     }
     .popup-content {
         height: 450px;
