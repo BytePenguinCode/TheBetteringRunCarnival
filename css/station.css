@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: left;
     align-items: center;
-    padding-left: 15px;
+    padding: 15px;
     width: 100%;
     color: var(--black  );
 }
