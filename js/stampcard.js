@@ -59,6 +59,7 @@ function main() {
 
     // Get the 'qrcode' parameter from the URL
     const urlParams = new URLSearchParams(window.location.search);
+
     const qrCode = urlParams.get("qrcode");
 
     console.log(qrCode);
@@ -68,6 +69,8 @@ function main() {
         saveScannedCodes(scannedCodes);
     }
 
+    updateProgressDisplay(scannedCodes);
+
     for (const e of document.getElementsByClassName("complete")) {
         if ("disabled" in e) {
             e.disabled = true; // Disable if the element supports the 'disabled' attribute
@@ -76,8 +79,16 @@ function main() {
             e.style.pointerEvents = "none"; // Prevent interactions for non-form elements
         }
     }
+}
 
-    updateProgressDisplay(scannedCodes);
+const urlParams = new URLSearchParams(window.location.search);
+
+const goodieBag = urlParams.get("goodieBag");
+
+if (goodieBag == "false") {
+    alert(
+        "Unfortunately, Goodie Bag Redemption is only available for Verified Users"
+    );
 }
 
 document.addEventListener("DOMContentLoaded", () => {

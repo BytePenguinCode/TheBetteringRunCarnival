@@ -163,6 +163,7 @@ p {
 
 .map {
     position: relative;
+    margin-bottom: 0px;
 }
 
 .map img {
@@ -244,4 +245,21 @@ p {
     font-size: 1.25rem;
     margin-top: -1rem;
     margin-bottom: 2rem;
+}
+
+.pageTitle {
+    font-weight: 900;
+    font-size: x-large;
+    width: 100%;
+    max-width: 100%;
+    color: var(--dark-green);
+    margin: 10px;
+    margin-top: 30px;
+}
+
+.footer-bottom {
+    background-color: var(--green);
+    padding: 20px 10px;
+    color: var(--white);
+    text-align: center;
 }

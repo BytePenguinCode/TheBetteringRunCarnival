@@ -1,3 +1,8 @@
+if (sessionStorage.getItem("pointsRedeemed") === "true") {
+    // Redirect to another page if redemption is already completed
+    window.location.href = "redeemed.html"; // Change to the appropriate page
+}
+
 function onScanSuccess(decodedText, decodedResult) {
     if (
         decodedText.includes(
@@ -27,11 +32,6 @@ function onScanSuccess(decodedText, decodedResult) {
 
 function onScanFailure(error) {
     console.warn("Scan error: ", error);
-}
-
-if (sessionStorage.getItem("pointsRedeemed") === "true") {
-    // Redirect to another page if redemption is already completed
-    window.location.href = "redeemed.html"; // Change to the appropriate page
 }
 
 document.addEventListener("DOMContentLoaded", () => {

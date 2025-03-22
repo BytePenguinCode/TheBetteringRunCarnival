@@ -4,6 +4,7 @@ if (sessionStorage.getItem("pointsRedeemed") === "true") {
 }
 
 console.log("Confirmation page script loaded");
+
 // Function to mark points as redeemed
 function redeemPoints() {
     sessionStorage.setItem("pointsRedeemed", "true");

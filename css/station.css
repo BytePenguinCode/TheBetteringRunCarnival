@@ -18,7 +18,7 @@ body {
     align-items: center;
     padding: 15px;
     width: 100%;
-    color: var(--black  );
+    color: var(--black);
 }
 
 #reader {
@@ -54,14 +54,4 @@ body {
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     padding: 20px 10px;
     margin: 15px 15px;
-}
-
-.stationName {
-    font-weight: 900;
-    font-size: x-large;
-    width: 100%;
-    max-width: 100%;
-    color: var(--dark-green);
-    margin: 10px;
-    margin-top: 24px;
 }
