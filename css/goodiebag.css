@@ -181,6 +181,7 @@ button:hover {
     height: 250px;
     width: 350px;
     padding: 10px;
+    padding-top: 0;
     }
 
 .close {
