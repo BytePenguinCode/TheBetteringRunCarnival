@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const station = params.get("station");
 
-    let stationName = document.querySelector(".stationName");
-    stationName.textContent = `Station ${station}`;
+    let pageTitle = document.querySelector(".pageTitle");
+    pageTitle.textContent = `Station ${station}`;
 
-    document.title = `The Bettering Run Carnival | Station ${station}`;
+    document.title = `Station ${station} | The Bettering Run`;
 
     //TODO: Change Text Content of .stationDescription
 
