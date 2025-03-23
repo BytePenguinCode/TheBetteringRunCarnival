@@ -296,6 +296,8 @@ button:hover {
 .button_row {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 #redeemedimg {
