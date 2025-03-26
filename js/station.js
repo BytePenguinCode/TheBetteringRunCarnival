@@ -38,20 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const pageTitle = document.getElementById("pageTitle");
     const station = params.get("station");
+    const titles = [
+        "Sustainability Meets Fashion", 
+        "Cap & Create", 
+        "HealthIQ", 
+        "Bin It Right!",
+        "Stress Less, Waste Less",
+    ];
 
-    switch (station) {
-        case "1":
-            pageTitle.innerHTML = "Sustainability Meets Fashion";
-        case "2":
-            pageTitle.innerHTML = "Cap & Create";
-    };
-
-    if (station in ["1", "2", "3", "4", "5"]){
-        const desc = document.getElementById(`pageDescription${station}`)
-        desc.classList.remove("hidden")
+    if (["1", "2", "3", "4", "5"].includes(station)){
+        pageTitle.innerHTML = titles[Number(station) - 1];
+        const desc = document.getElementById(`pageDescription${station}`);
+        desc.classList.remove("hidden");
     }
 
-    //TODO: Change Text Content of .stationDescription
+    else {
+        window.location.href = "index.html";
+    }
 
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
         console.error("getUserMedia is not supported in this browser.");
