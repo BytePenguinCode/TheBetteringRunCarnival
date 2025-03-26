@@ -36,12 +36,20 @@ function onScanFailure(error) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
+    const pageTitle = document.getElementById("pageTitle");
     const station = params.get("station");
 
-    let pageTitle = document.querySelector(".pageTitle");
-    pageTitle.textContent = `Station ${station}`;
+    switch (station) {
+        case "1":
+            pageTitle.innerHTML = "Sustainability Meets Fashion";
+        case "2":
+            pageTitle.innerHTML = "Cap & Create";
+    };
 
-    document.title = `Station ${station} | The Bettering Run`;
+    if (station in ["1", "2", "3", "4", "5"]){
+        const desc = document.getElementById(`pageDescription${station}`)
+        desc.classList.remove("hidden")
+    }
 
     //TODO: Change Text Content of .stationDescription
 
