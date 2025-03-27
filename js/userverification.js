@@ -1,3 +1,49 @@
+const SHEET_ID = "1UqQ8g1Ahkxl90w5VegkCc0P9lcCqNGxfs-B4B4mJDPU";  
+const API_KEY = "AIzaSyBgjNqzeX3qkrqVc4P-uz9iSve0Aphlac4";
+const RANGE = "Sheet1!A:A"; // Column with phone numbers
+
+const URL = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
+
+async function fetchVerifiedNumbers() {
+    const response = await fetch(URL);
+    const data = await response.json();
+    console.log(data.values.flat())
+    return data.values.flat(); // Converts to a simple array of phone numbers
+}
+
+
+// Function for handling normal login
+async function handleLogin() {
+    console.log("User clicked Login");
+
+    const inputNumber = document.getElementById("username").value.trim();
+    const allowedNumbers = await fetchVerifiedNumbers();
+
+    if (allowedNumbers.includes(inputNumber)) {
+        sessionStorage.setItem("userLoggedIn", "true");
+        sessionStorage.setItem("guestUser", "false");
+        console.log("userLoggedIn set to true");
+    
+        // Redirect after setting session
+        window.location.href = "stampcard.html";
+    } else {
+        alert("Invalid phone number.");
+    }
+}
+
+// Function for handling guest login
+function handleGuestLogin() {
+    console.log("User logged in as Guest");
+
+    sessionStorage.setItem("guestUser", "true");
+    sessionStorage.setItem("userLoggedIn", "true");
+    console.log("guestUser set to true");
+
+    // Redirect to guest-access page
+    window.location.href = "stampcard.html";
+}
+
+
 if (sessionStorage.getItem("pointsRedeemed") === "true") {
     console.log("Redirecting to redeemed.html...");
     window.location.href = "redeemed.html"; // Ensure this page exists
@@ -34,27 +80,3 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Guest Login button not found");
     }
 });
-
-// Function for handling normal login
-function handleLogin() {
-    console.log("User clicked Login");
-
-    sessionStorage.setItem("userLoggedIn", "true");
-    sessionStorage.setItem("guestUser", "false");
-    console.log("userLoggedIn set to true");
-
-    // Redirect after setting session
-    window.location.href = "stampcard.html";
-}
-
-// Function for handling guest login
-function handleGuestLogin() {
-    console.log("User logged in as Guest");
-
-    sessionStorage.setItem("guestUser", "true");
-    sessionStorage.setItem("userLoggedIn", "true");
-    console.log("guestUser set to true");
-
-    // Redirect to guest-access page
-    window.location.href = "stampcard.html";
-}
