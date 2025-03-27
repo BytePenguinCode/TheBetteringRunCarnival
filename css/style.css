@@ -157,6 +157,22 @@ p {
     margin: 0;
 }
 
+#prize {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#prize button {
+    background-color: var(--white);
+    box-shadow: 0 0 15px var(--dark-green);
+}
+
+#prize button:hover {
+    background-color: var(--dark-green);
+    box-shadow: 0 0 15px var(--dark-green);
+}
+
 .progress {
     font-size: 1.1rem;
 }
