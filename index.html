@@ -273,7 +273,7 @@
 
                     <form>
                         <div class="form-group">
-                            <label for="username">Phone no.</label>
+                            <label for="username">Phone number</label>
                             <div class="input-container">
                                 <svg
                                     width="18"
@@ -293,10 +293,12 @@
                                     ></path>
                                 </svg>
                                 <input
-                                    type="text"
+                                    type="number"
                                     id="username"
                                     class="login-input"
-                                    placeholder="Enter your phone no."
+                                    placeholder="Enter your phone number"
+                                    min="80000000"
+                                    max="99999999"
                                     required
                                 />
                             </div>

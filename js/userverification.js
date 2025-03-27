@@ -7,7 +7,20 @@ async function fetchVerifiedNumbers() {
     return data.values.flat(); // Converts to a simple array of phone numbers
 }
 
-fetchVerifiedNumbers();
+function validatePhoneNumber() {
+    const input = document.getElementById("username");
+    const phoneNumber = input.value;
+
+    // Check if the phone number is within the valid ranges
+    if (
+        (phoneNumber >= 600000000 && phoneNumber <= 699999999) ||
+        (phoneNumber >= 800000000 && phoneNumber <= 999999999)
+    ) {
+        input.setCustomValidity(""); // Valid number
+    } else {
+        input.setCustomValidity("Please enter a valid phone number.");
+    }
+}
 
 // Function for handling normal login
 async function handleLogin() {
