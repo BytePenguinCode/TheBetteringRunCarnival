@@ -1,16 +1,13 @@
-const SHEET_ID = "1UqQ8g1Ahkxl90w5VegkCc0P9lcCqNGxfs-B4B4mJDPU";  
-const API_KEY = "AIzaSyBgjNqzeX3qkrqVc4P-uz9iSve0Aphlac4";
-const RANGE = "Sheet1!A:A"; // Column with phone numbers
-
-const URL = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
-
 async function fetchVerifiedNumbers() {
-    const response = await fetch(URL);
+    const response = await fetch(
+        "https://shy-unit-e261.gran5g2017.workers.dev/"
+    );
     const data = await response.json();
-    console.log(data.values.flat())
+    console.log(data.values.flat());
     return data.values.flat(); // Converts to a simple array of phone numbers
 }
 
+fetchVerifiedNumbers();
 
 // Function for handling normal login
 async function handleLogin() {
@@ -23,7 +20,7 @@ async function handleLogin() {
         sessionStorage.setItem("userLoggedIn", "true");
         sessionStorage.setItem("guestUser", "false");
         console.log("userLoggedIn set to true");
-    
+
         // Redirect after setting session
         window.location.href = "stampcard.html";
     } else {
@@ -42,7 +39,6 @@ function handleGuestLogin() {
     // Redirect to guest-access page
     window.location.href = "stampcard.html";
 }
-
 
 if (sessionStorage.getItem("pointsRedeemed") === "true") {
     console.log("Redirecting to redeemed.html...");
