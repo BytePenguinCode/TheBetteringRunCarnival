@@ -33,6 +33,7 @@ body {
 nav {
     background-color: var(--green);
     width: 100%;
+    z-index: 1000;
 }
 
 main {
@@ -52,6 +53,11 @@ h1 {
     font-size: 1.75rem;
     margin: 0;
 }
+
+a {
+    text-decoration: none;
+}
+
 .back {
     box-sizing: border-box;
     display: flex;
