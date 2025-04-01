@@ -37,7 +37,7 @@ async function handleLogin() {
         // Redirect after setting session
         window.location.href = "stampcard.html";
     } else {
-        alert("Invalid phone number.");
+        alert("Invalid Registration ID.");
     }
 }
 
