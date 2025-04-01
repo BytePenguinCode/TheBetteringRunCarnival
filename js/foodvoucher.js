@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // if (sessionStorage.getItem("guestUser") === "true") {
-    //    window.location.href = "stampcard.html?foodVoucher=false"; // Redirect for guest users
-    // }
+    if (sessionStorage.getItem("guestUser") === "true") {
+        window.location.href = "stampcard.html?foodVoucher=false"; // Redirect for guest users
+    }
 
     const openPopupBtn = document.getElementById("redeemButton");
     const popup = document.getElementById("popup");
