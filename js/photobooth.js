@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     if (sessionStorage.getItem("guestUser") === "true") {
-        window.location.href = "stampcard.html?goodieBag=false"; // Change to the appropriate page
+        window.location.href = "stampcard.html?photoBooth=false"; // Change to the appropriate page
     }
 
     const openPopupBtn = document.getElementById("redeemButton");
@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("bottomDisclaimer").style.height = "auto";
     }
 
-    if (localStorage.getItem("redeemed") === "true") {
+    if (localStorage.getItem("photoboothRedeemed") === "true") {
         redeemed();
     }
 
     // Open the popup
     openPopupBtn.addEventListener("click", function () {
-        if (localStorage.getItem("redeemed") === "true") {
+        if (localStorage.getItem("photoboothRedeemed") === "true") {
             popup.style.display = "none";
         } else {
             popup.style.display = "flex";
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     confirmBtn.addEventListener("click", function () {
-        localStorage.setItem("redeemed", "true");
+        localStorage.setItem("photoboothRedeemed", "true");
         popup.style.display = "none";
         redeemed();
     });
