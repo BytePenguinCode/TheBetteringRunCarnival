@@ -330,6 +330,15 @@ button.disabled {
     height: 250px;
 }
 
+#foodvoucherimg {
+    max-width: 100%;  
+    height: auto;  
+    display: block;  
+    margin: 0 auto; 
+    object-fit: contain;  
+}
+
+
 #footer {
     background-color: #245448;
     padding: 25px 10px;
