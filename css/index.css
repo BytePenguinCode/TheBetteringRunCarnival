@@ -16,6 +16,17 @@ body {
     position: relative;
 }
 
+.nav-container {
+    box-sizing: border-box;
+    background-color: var(--green);
+    width: 768px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    z-index: 1000;
+}
+
 .background {
     position: absolute;
     inset: 0;

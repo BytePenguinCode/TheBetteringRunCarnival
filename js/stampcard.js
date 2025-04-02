@@ -31,7 +31,7 @@ function updateProgressDisplay(codes) {
     const codesListDiv = document.getElementById("codesList");
     const prizeDiv = document.getElementById("prize");
 
-    progressDiv.textContent = `You've scanned ${codes.length} out of ${TOTAL_CODES} codes.`;
+    progressDiv.textContent = `You have completed ${codes.length} out of ${TOTAL_CODES} stations.`;
 
     // Show scanned codes
     codesListDiv.innerHTML = "";
@@ -54,7 +54,7 @@ function updateProgressDisplay(codes) {
         prizeDiv.appendChild(claimButton);
     } else {
         prizeDiv.innerHTML =
-            "<p>Keep scanning QR codes to unlock the prize!</p>";
+            "<p>Complete all 5 stations to win a LUCKY DRAW TICKET or special prize — redeemable at the redemption counter!</p>";
     }
 }
 
