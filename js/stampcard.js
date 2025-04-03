@@ -38,8 +38,13 @@ function updateProgressDisplay(codes) {
     const progressDiv = document.getElementById("progress");
     const codesListDiv = document.getElementById("codesList");
     const prizeDiv = document.getElementById("prize");
-
-    progressDiv.textContent = `You have completed ${codes.length} station(s) out of ${TOTAL_CODES} stations:`;
+    if (codes.length === 0) {
+        progressDiv.textContent = `You have yet to complete any stations.`;
+    } else if (codes.length === 1) {
+        progressDiv.textContent = `You have completed ${codes.length} station out of ${TOTAL_CODES} stations:`;
+    } else {
+        progressDiv.textContent = `You have completed ${codes.length} stations out of ${TOTAL_CODES} stations:`;
+    }
 
     // Show scanned codes
     codesListDiv.innerHTML = "";

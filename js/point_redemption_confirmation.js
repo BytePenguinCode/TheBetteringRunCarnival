@@ -7,6 +7,10 @@ console.log("Confirmation page script loaded");
 
 // Function to mark points as redeemed
 function redeemPoints() {
+    if (sessionStorage.getItem("pointsRedeemed") === "true") {
+        // Redirect to another page if redemption is already completed
+        window.location.href = "redeemed.html"; // Change to the appropriate page
+    }
     sessionStorage.setItem("pointsRedeemed", "true");
     window.location.href = "point_redemption.html"; // Redirect after redemption
 }
