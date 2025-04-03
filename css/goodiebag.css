@@ -190,6 +190,12 @@ section .container {
     align-items: center;
 }
 
+.someText {
+    font-weight: 700;
+    font-size: large;
+    color: var(--pastel-green);
+}
+
 #redeemButton {
     position: relative;
     z-index: 10;
@@ -331,13 +337,12 @@ button.disabled {
 }
 
 #foodvoucherimg {
-    max-width: 100%;  
-    height: auto;  
-    display: block;  
-    margin: 0 auto; 
-    object-fit: contain;  
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
 }
-
 
 #footer {
     background-color: #245448;

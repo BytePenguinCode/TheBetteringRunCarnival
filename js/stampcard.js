@@ -14,6 +14,14 @@ let codes = [
     "7d71d1c45b89a253c6eb23b67855e912a402b56d59c5b7cda8b98ed1e1f6a540", // Hash of 'five'
 ];
 
+let station_names = [
+    "Sustainability Meets Fashion",
+    "Cap & Create",
+    "HealthIQ",
+    "Bin It Right!",
+    "Stress Less, Waste Less",
+];
+
 // Function to get progress from localStorage
 function getScannedCodes() {
     const saved = localStorage.getItem("scannedQRCodes");
@@ -31,13 +39,13 @@ function updateProgressDisplay(codes) {
     const codesListDiv = document.getElementById("codesList");
     const prizeDiv = document.getElementById("prize");
 
-    progressDiv.textContent = `You have completed ${codes.length} out of ${TOTAL_CODES} stations.`;
+    progressDiv.textContent = `You have completed ${codes.length} station(s) out of ${TOTAL_CODES} stations:`;
 
     // Show scanned codes
     codesListDiv.innerHTML = "";
     codes.forEach((code, index) => {
         const p = document.createElement("p");
-        p.textContent = `Scanned QR Code: ${code}`;
+        p.innerHTML = `<b>${station_names[code - 1]}</b>`;
         codesListDiv.appendChild(p);
         const station = document.getElementById(code);
         station.classList.add("complete");
@@ -100,6 +108,22 @@ const goodieBag = urlParams.get("goodieBag");
 if (goodieBag == "false") {
     alert(
         "Unfortunately, Goodie Bag Redemption is only available for Verified Users"
+    );
+}
+
+const foodVoucher = urlParams.get("foodVoucher");
+
+if (foodVoucher == "false") {
+    alert(
+        "Unfortunately, Food Voucher Redemption is only available for Verified Users"
+    );
+}
+
+const photoBooth = urlParams.get("photoBooth");
+
+if (photoBooth == "false") {
+    alert(
+        "Unfortunately, Photo Booth Voucher Redemption is only available for Verified Users"
     );
 }
 

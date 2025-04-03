@@ -12,13 +12,10 @@ function validatePhoneNumber() {
     const phoneNumber = input.value;
 
     // Check if the phone number is within the valid ranges
-    if (
-        (phoneNumber >= 600000000 && phoneNumber <= 699999999) ||
-        (phoneNumber >= 800000000 && phoneNumber <= 999999999)
-    ) {
+    if (phoneNumber >= 10000 && phoneNumber <= 10300) {
         input.setCustomValidity(""); // Valid number
     } else {
-        input.setCustomValidity("Please enter a valid phone number.");
+        input.setCustomValidity("Please enter a Valid Registration ID.");
     }
 }
 
@@ -56,9 +53,17 @@ function handleGuestLogin() {
 if (sessionStorage.getItem("pointsRedeemed") === "true") {
     console.log("Redirecting to redeemed.html...");
     window.location.href = "redeemed.html"; // Ensure this page exists
-} else if (sessionStorage.getItem("userLoggedIn") == "true") {
-    console.log("Redirecting to stampcard.html...");
-    window.location.href = "stampcard.html"; // Ensure this page exists
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const redirect = urlParams.get("redirect");
+
+if (!urlParams || !redirect || redirect != "false") {
+    if (sessionStorage.getItem("userLoggedIn") == "true") {
+        console.log("Redirecting to stampcard.html...");
+        window.location.href = "stampcard.html"; // Ensure this page exists
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
